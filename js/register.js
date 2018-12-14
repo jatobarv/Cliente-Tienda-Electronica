@@ -12,5 +12,5 @@ formulario.addEventListener('submit', function (e) {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-        })
+        });
 })

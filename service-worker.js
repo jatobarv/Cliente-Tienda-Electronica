@@ -2,7 +2,13 @@ var cacheName = "tienda-v1";
 var filesToCache = [
     "/",
     "/index.html",
+    "/login.html",
+    "/register.html",
     "/css/main.css",
+    "/css/login.css",
+    "/css/register.css",
+    "/js/app.js",
+    "/js/register",
     "/img/Myth of Digital Marketing Edit.jpg",
     "/img/chromebook.jpg",
     "/img/Lenovo-desktop-legion-y720.jpg"
