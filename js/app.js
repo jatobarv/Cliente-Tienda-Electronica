@@ -11,8 +11,9 @@
 
 (function () {
     var app = {
-        /* bearColorFilter: document.getElementById( "bearColorFilter" ), */
+        productoColorFilter: document.getElementById( "productoColorFilter" ),
         productoList: [],
+        localList: [],
     }
 
     var loadData = function () {
@@ -67,15 +68,30 @@
             productosContainer.appendChild(productoContainer);
         }
     }
-
-    /*     app.bearColorFilter.addEventListener( "change", function( e ) {
-            var filteredBears = app.bearList.filter( function( bear ) {
-                if( bear.color == app.bearColorFilter.value ) {
-                    return bear;
+        if(navigator.onLine){
+        app.productoColorFilter.addEventListener("change", function(e){
+            var filteredProductos = app.productoList.filter(function(producto){
+                if (producto.tipo== app.productoColorFilter.value || app.productoColorFilter.value == "TODOS"){
+                    return product;
+                    localStorage.setItem('productos',producto);
                 }
-            } );
-            displayProductos( filteredBears );
-        } ); */
+            });
+            displayProductos(filteredProductos);
+        });
+        loadData();
+    }else{
+        displayProductos(JSON.parse(localStorage.getItem('productos')));
+    }    
+
+    app.productoColorFilter.addEventListener( "change", function( e ) {
+        var filteredProductos = app.productoList.filter( function( producto ) {
+            if( producto.estado == app.productoColorFilter.value ) {
+                return producto;
+            }
+        } );
+        displayProductos( filteredProductos );
+    } );
+            
 
     loadData();
 })();
