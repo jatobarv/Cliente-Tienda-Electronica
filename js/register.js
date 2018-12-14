@@ -5,7 +5,7 @@ formulario.addEventListener('submit', function (e) {
 
     var datos = new FormData(formulario);
 
-    fetch('http://localhost:8000/vendedor/', {
+    fetch('http://cduranf.pythonanywhere.com/vendedor/', {
         method: 'POST',
         body: datos
     })
