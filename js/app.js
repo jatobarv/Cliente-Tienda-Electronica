@@ -11,14 +11,14 @@
 
 (function () {
     var app = {
-        productoColorFilter: document.getElementById("productoColorFilter"),
-        productoList: [],
-        localList: [],
-    }
+/*         productoColorFilter: document.getElementById("productoColorFilter"),
+ */        productoList: [],
+/*         localList: [],
+ */    }
 
     var loadData = function () {
         var xhttp = new XMLHttpRequest();
-        var url = "http://cduranf.pythonanywhere.com/productos/";
+        var url = "https://cduranf1.pythonanywhere.com/productos/";
 
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -68,7 +68,7 @@
             productosContainer.appendChild(productoContainer);
         }
     }
-    if (navigator.onLine) {
+    /* if (navigator.onLine) {
         app.productoColorFilter.addEventListener("change", function (e) {
             var filteredProductos = app.productoList.filter(function (producto) {
                 if (producto.tipo == app.productoColorFilter.value || app.productoColorFilter.value == "TODOS") {
@@ -92,6 +92,6 @@
         displayProductos(filteredProductos);
     });
 
-
+ */
     loadData();
 })();
